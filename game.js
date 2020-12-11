@@ -91,8 +91,9 @@ class Game{
                     player.distance += 10
                     player.update();
                 }
-                drawSprites();
+               
                   if (player.index !== null) {
+                       drawSprites();
                     for (var i = 0; i < fruitGroup.length; i++) {
                         if (fruitGroup.get(i).isTouching(players)) {
                             fruitGroup.get(i).destroy();
