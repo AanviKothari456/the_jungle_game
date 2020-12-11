@@ -91,7 +91,7 @@ class Game{
                     player.distance += 10
                     player.update();
                 }
-
+                drawSprites();
                   if (player.index !== null) {
                     for (var i = 0; i < fruitGroup.length; i++) {
                         if (fruitGroup.get(i).isTouching(players)) {
@@ -100,12 +100,19 @@ class Game{
                             player.update();
                             
                         }
-                    
+                        if(index === player.index){
+                            
+                            fill("black");
+                            textSize(25);
+                            text(allPlayers[plr].name + ":" ,x-25,y+25);
+                          
+                            
+                        }
                 }
             }
    
-    drawSprites();
-    if(index === player.index){
+   
+  /*  if(index === player.index){
         //strokewight(3);
        // fill("black");
        // circle(x,y,60);
@@ -117,8 +124,9 @@ class Game{
       
         
     }
-
+*/
     textSize(20);
+    fill('white');
  text("score: " +score,300,30);
             }
 
