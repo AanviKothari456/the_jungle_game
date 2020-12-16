@@ -44,7 +44,7 @@ class Game{
                  var x =100;
                  var y=200;
                  var index =0;
-                 //drawSprites();
+                 drawSprites();
                  for(var plr in allPlayers){
                     
                     
@@ -54,11 +54,16 @@ class Game{
                      
                      players[index -1].x = x;
                      players[index - 1].y = y;
-                       
-                     
-                    
-                     
-                 
+
+                     if(index === player.index){
+                            
+                        fill("black");
+                        textSize(25);
+                        text(allPlayers[plr].name + ":" ,x-25,y+25);
+                      
+                        
+                    }
+                
                  }
                 
                 
@@ -93,7 +98,7 @@ class Game{
                 }
                
                   if (player.index !== null) {
-                       drawSprites();
+                       
                     for (var i = 0; i < fruitGroup.length; i++) {
                         if (fruitGroup.get(i).isTouching(players)) {
                             fruitGroup.get(i).destroy();
@@ -101,14 +106,7 @@ class Game{
                             player.update();
                             
                         }
-                        if(index === player.index){
-                            
-                            fill("black");
-                            textSize(25);
-                            text(allPlayers[plr].name + ":" ,x-25,y+25);
-                          
-                            
-                        }
+                        
                 }
             }
    
